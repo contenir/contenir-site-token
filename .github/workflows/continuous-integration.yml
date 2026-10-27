@@ -1,0 +1,25 @@
+name: "Continuous Integration"
+
+on:
+  push:
+    branches:
+      - main
+      - master
+      - "[0-9]+.x"
+      - "[0-9]+.[0-9]+.x"
+      - "v[0-9]+"
+  pull_request:
+
+jobs:
+  qa:
+    uses: contenir/contenir-qa-tools/.github/workflows/continuous-integration.yml@0.1.x
+    secrets: inherit
+    with:
+      php-versions: '["8.3", "8.4", "8.5"]'
+      mago-version: "1.57.0"
+      run-integration: true
+      enable-codecov: true
+      coverage-php-version: "8.4"
+      enable-infection: true
+      min-msi: "100"
+      min-covered-msi: "100"

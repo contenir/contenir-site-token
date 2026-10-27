@@ -1,0 +1,47 @@
+{
+    "name": "contenir/contenir-site-token",
+    "description": "Signed one-time tokens between the Contenir CMS and a site: compact HS256 tokens with key rotation, a bounded lifetime and single use, shared by the preview and cache protocols.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["contenir", "cms", "token", "jws", "hmac"],
+    "require": {
+        "php": "~8.3.0 || ~8.4.0 || ~8.5.0",
+        "psr/clock": "^1.0",
+        "psr/simple-cache": "^1.0 || ^2.0 || ^3.0"
+    },
+    "require-dev": {
+        "contenir/contenir-qa-tools": "0.1.x-dev",
+        "infection/infection": "^0.35.6",
+        "phpunit/phpunit": "^11.5"
+    },
+    "autoload": {
+        "psr-4": { "Contenir\\SiteToken\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Contenir\\SiteToken\\Tests\\": "tests/" }
+    },
+    "scripts": {
+        "check": ["@cs-check", "@static-analysis", "@test", "@test-integration", "@mutation-test"],
+        "cs-check": ["mago format --check", "mago lint"],
+        "cs-fix": ["mago format", "mago lint --fix"],
+        "static-analysis": "mago analyze",
+        "test": "phpunit --colors=always --testsuite unit",
+        "test-integration": "phpunit --colors=always --testsuite integration",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+        "mutation-test": "infection"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "infection/extension-installer": true
+        },
+        "platform": {
+            "php": "8.3.99"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        }
+    }
+}
