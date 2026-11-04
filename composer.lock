@@ -343,12 +343,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/contenir/contenir-qa-tools.git",
-                "reference": "59510ed76551e2d3d6e7ca2a5b4ca27762b2410d"
+                "reference": "24625ab4c8d781568383c1b7b697e9df6096e914"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/contenir/contenir-qa-tools/zipball/59510ed76551e2d3d6e7ca2a5b4ca27762b2410d",
-                "reference": "59510ed76551e2d3d6e7ca2a5b4ca27762b2410d",
+                "url": "https://api.github.com/repos/contenir/contenir-qa-tools/zipball/24625ab4c8d781568383c1b7b697e9df6096e914",
+                "reference": "24625ab4c8d781568383c1b7b697e9df6096e914",
                 "shasum": ""
             },
             "require": {
@@ -377,7 +377,7 @@
             "support": {
                 "source": "https://github.com/contenir/contenir-qa-tools"
             },
-            "time": "2026-10-21T04:07:11+00:00"
+            "time": "2026-11-04T00:20:47+00:00"
         },
         {
             "name": "fidry/cpu-core-counter",
